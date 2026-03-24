@@ -94,37 +94,37 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Sidebar panel */}
+            {/* Sidebar flutuante */}
             <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed top-0 right-0 h-full w-72 bg-[#161616] border-l border-[#2a2a2a] z-50 flex flex-col"
+              initial={{ opacity: 0, y: -12, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -12, scale: 0.97 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden fixed top-4 right-4 left-4 z-50 rounded-2xl overflow-hidden bg-[#111111]/85 backdrop-blur-xl border border-white/10 shadow-2xl"
             >
               {/* Header com logo e botão fechar */}
-              <div className="flex items-center justify-between px-6 pt-6 pb-6 border-b border-[#2a2a2a]">
-                <img src="/logo.svg" alt="Park Real" className="h-10 w-auto" />
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
+                <img src="/logo.svg" alt="Park Real" className="h-9 w-auto" />
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="text-white/50 hover:text-white p-1.5 rounded-full hover:bg-[#2a2a2a] transition-colors"
+                  className="text-white/40 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors"
                   aria-label="Fechar menu"
                 >
-                  <X size={20} weight="bold" />
+                  <X size={18} weight="bold" />
                 </button>
               </div>
 
               {/* Links */}
-              <div className="flex flex-col px-6 py-8 gap-1 flex-1">
+              <div className="flex flex-col px-5 py-2">
                 {navLinks.map((link, i) => (
                   <motion.a
                     key={link.label}
                     href={link.href}
                     onClick={handleLinkClick}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + i * 0.06, duration: 0.3 }}
-                    className="text-white/70 text-lg font-light py-3.5 border-b border-[#2a2a2a] last:border-none hover:text-white transition-colors"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 + i * 0.05, duration: 0.25 }}
+                    className="text-white/60 text-base font-light py-3.5 border-b border-white/6 last:border-none hover:text-white transition-colors"
                   >
                     {link.label}
                   </motion.a>
@@ -132,11 +132,11 @@ export default function Navbar() {
               </div>
 
               {/* CTA */}
-              <div className="px-6 pb-10">
+              <div className="px-5 py-4">
                 <a
                   href="#contato"
                   onClick={handleLinkClick}
-                  className="block w-full text-center px-5 py-3.5 rounded-full bg-white text-[#111111] font-semibold transition-all hover:bg-[#4DFFA0]"
+                  className="block w-full text-center px-5 py-3 rounded-full bg-white text-[#111111] font-semibold text-sm transition-all hover:bg-[#4DFFA0]"
                 >
                   Fale Conosco
                 </a>
