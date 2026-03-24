@@ -36,7 +36,7 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-[center_20%]"
         >
           <source src="/video hero/hero.mp4" type="video/mp4" />
           <source src="/video hero/hero.webm" type="video/webm" />
