@@ -80,36 +80,69 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile Sidebar */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="md:hidden mx-6 mt-2 rounded-2xl overflow-hidden bg-[#1e1e1e]/95 backdrop-blur-md border border-[#333333] shadow-lg"
-          >
-            <div className="flex flex-col px-6 py-4 gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={handleLinkClick}
-                  className="text-[#f0f0f0] text-base font-medium py-2 border-b border-[#333333] last:border-none transition-colors hover:text-[#4DFFA0]"
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              onClick={() => setMenuOpen(false)}
+            />
+
+            {/* Sidebar panel */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden fixed top-0 right-0 h-full w-72 bg-[#161616] border-l border-[#2a2a2a] z-50 flex flex-col"
+            >
+              {/* Header com logo e botão fechar */}
+              <div className="flex items-center justify-between px-6 pt-6 pb-6 border-b border-[#2a2a2a]">
+                <img src="/logo.svg" alt="Park Real" className="h-10 w-auto" />
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="text-white/50 hover:text-white p-1.5 rounded-full hover:bg-[#2a2a2a] transition-colors"
+                  aria-label="Fechar menu"
                 >
-                  {link.label}
+                  <X size={20} weight="bold" />
+                </button>
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-col px-6 py-8 gap-1 flex-1">
+                {navLinks.map((link, i) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    onClick={handleLinkClick}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + i * 0.06, duration: 0.3 }}
+                    className="text-white/70 text-lg font-light py-3.5 border-b border-[#2a2a2a] last:border-none hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="px-6 pb-10">
+                <a
+                  href="#contato"
+                  onClick={handleLinkClick}
+                  className="block w-full text-center px-5 py-3.5 rounded-full bg-white text-[#111111] font-semibold transition-all hover:bg-[#4DFFA0]"
+                >
+                  Fale Conosco
                 </a>
-              ))}
-              <a
-                href="#contato"
-                onClick={handleLinkClick}
-                className="mt-1 w-full text-center px-5 py-3 rounded-full bg-white text-[#111111] font-semibold transition-all hover:bg-[#4DFFA0] hover:text-[#111111]"
-              >
-                Fale Conosco
-              </a>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>
