@@ -35,7 +35,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-40"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-4">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center relative">
 
           {/* Desktop nav — pill centralizado */}
           <div
@@ -60,6 +60,11 @@ export default function Navbar() {
             >
               Fale Conosco
             </a>
+          </div>
+
+          {/* Logo — desktop only, canto direito */}
+          <div className="hidden md:flex absolute right-0">
+            <img src="/logo.svg" alt="Park Real" className="h-10 w-auto" />
           </div>
 
           {/* Mobile hamburger — canto direito */}
