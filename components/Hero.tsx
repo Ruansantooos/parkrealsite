@@ -60,6 +60,9 @@ export default function Hero() {
 
         {/* Bottom gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-[45%] lg:h-[50%] bg-gradient-to-t from-[#111] via-[#111]/80 to-transparent" />
+
+        {/* Bottom-right gradient to cover video watermark logo */}
+        <div className="absolute bottom-0 right-0 w-[22%] h-[28%] bg-gradient-to-tl from-[#111] via-[#111]/70 to-transparent" />
       </motion.div>
 
       {/* Text content — mobile: top-aligned, desktop: center-aligned */}
