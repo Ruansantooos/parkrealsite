@@ -41,8 +41,8 @@ export default function Navbar() {
           <div
             className={`hidden md:flex items-center gap-6 px-6 py-2.5 rounded-full transition-all duration-300 ${
               scrolled
-                ? 'bg-[#1e1e1e]/90 backdrop-blur-md border border-[#333333] shadow-sm'
-                : 'bg-[#1e1e1e]/70 backdrop-blur-sm border border-[#333333]/60'
+                ? 'bg-[#1e1e1e]/90 backdrop-blur-md border border-white/10 shadow-lg'
+                : 'bg-[#1e1e1e]/70 backdrop-blur-sm border border-white/5 shadow-sm'
             }`}
           >
             {navLinks.map((link) => (
@@ -62,20 +62,21 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile hamburger — canto direito */}
-          <div className="md:hidden w-full flex justify-end">
-            <button
-              className="text-[#f0f0f0] p-2 rounded-full bg-[#1e1e1e]/80 border border-[#333333] backdrop-blur-sm hover:bg-[#333333] transition-colors"
-              onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-            >
-              {menuOpen ? <X size={22} weight="bold" /> : <List size={22} weight="bold" />}
-            </button>
+          {/* Mobile — Floating Pill with Logo */}
+          <div className="md:hidden w-full flex justify-between items-center px-4 py-3 rounded-full bg-[#111111]/75 backdrop-blur-xl border border-white/10 shadow-xl">
+             <img src="/logo.svg" alt="Park Real" className="h-7 w-auto ml-1" />
+             <button
+               className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+               onClick={() => setMenuOpen((prev) => !prev)}
+               aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+             >
+               {menuOpen ? <X size={22} weight="bold" /> : <List size={22} weight="bold" />}
+             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Menu — Floating Card */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -89,49 +90,53 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Sidebar flutuante */}
+            {/* Floating Card */}
             <motion.div
-              initial={{ opacity: 0, y: -12, scale: 0.97 }}
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -12, scale: 0.97 }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed top-4 right-4 left-4 z-50 rounded-2xl overflow-hidden bg-[#111111]/85 backdrop-blur-xl border border-white/10 shadow-2xl"
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden fixed top-20 right-6 left-6 z-50 rounded-3xl overflow-hidden bg-[#161616]/95 backdrop-blur-2xl border border-white/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]"
             >
-              {/* Header com logo e botão fechar */}
-              <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
-                <img src="/logo.svg" alt="Park Real" className="h-9 w-auto" />
+              {/* Card Header */}
+              <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
+                <div className="flex items-center gap-2">
+                   <div className="w-8 h-8 rounded-lg bg-[#4DFFA0]/10 flex items-center justify-center">
+                     <img src="/logo.svg" alt="" className="h-4 w-auto" />
+                   </div>
+                   <span className="text-white font-medium text-sm">Park Real</span>
+                </div>
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="text-white/40 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors"
-                  aria-label="Fechar menu"
+                  className="text-white/40 hover:text-white p-1"
                 >
                   <X size={18} weight="bold" />
                 </button>
               </div>
 
-              {/* Links */}
-              <div className="flex flex-col px-5 py-2">
+              {/* Menu Links */}
+              <div className="flex flex-col px-6 pt-2 pb-1">
                 {navLinks.map((link, i) => (
                   <motion.a
                     key={link.label}
                     href={link.href}
                     onClick={handleLinkClick}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 + i * 0.05, duration: 0.25 }}
-                    className="text-white/60 text-base font-light py-3.5 border-b border-white/6 last:border-none hover:text-white transition-colors"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + i * 0.05 }}
+                    className="text-white/40 text-[0.95rem] font-medium py-4 border-b border-white/5 last:border-none transition-colors hover:text-white"
                   >
                     {link.label}
                   </motion.a>
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="px-5 py-4">
+              {/* Action Button */}
+              <div className="px-6 py-6 pt-4">
                 <a
                   href="#contato"
                   onClick={handleLinkClick}
-                  className="block w-full text-center px-5 py-3 rounded-full bg-white text-[#111111] font-semibold text-sm transition-all hover:bg-[#4DFFA0]"
+                  className="block w-full text-center px-5 py-4 rounded-2xl bg-white text-[#111111] font-bold text-sm transition-all hover:bg-[#4DFFA0] active:scale-[0.98]"
                 >
                   Fale Conosco
                 </a>
