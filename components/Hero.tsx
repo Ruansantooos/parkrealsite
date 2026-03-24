@@ -36,7 +36,7 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
-          className="w-full h-full object-cover object-[60%_center] lg:object-center"
+          className="w-full h-full object-cover object-center"
         >
           <source src="/video hero/hero.mp4" type="video/mp4" />
           <source src="/video hero/hero.webm" type="video/webm" />
@@ -51,8 +51,6 @@ export default function Hero() {
         {/* Mobile: left gradient so text is readable */}
         <div className="absolute inset-y-0 left-0 w-[65%] bg-gradient-to-r from-black/80 to-transparent lg:hidden" />
 
-        {/* Desktop: right-side hide video logo */}
-        <div className="absolute inset-y-0 right-0 w-[18%] bg-gradient-to-l from-[#1e1e1e] to-transparent hidden lg:block" />
 
         {/* Scroll-driven extra darkening */}
         <motion.div
