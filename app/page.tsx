@@ -26,7 +26,8 @@ export default function Home() {
         </div>
       </main>
       <Footer />
-<RadarNav />
+      <WhatsApp />
+      <RadarNav />
     </SmoothScroll>
   )
 }

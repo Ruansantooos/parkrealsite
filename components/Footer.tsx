@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#161616] border-t border-[#2e2e2e]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 text-center lg:text-left">
           {/* Brand */}
           <div className="max-w-xs">
             <div className="mb-4">

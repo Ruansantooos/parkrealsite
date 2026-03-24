@@ -150,11 +150,11 @@ export default function Servicos() {
           <motion.div
             custom={0}
             variants={cardReveal}
-            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] lg:col-span-2 min-h-[320px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
+            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] lg:col-span-2 min-h-[280px] sm:min-h-[320px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
           >
             {cards[0].visual}
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
               <div className="w-9 h-9 rounded-xl bg-[#4DFFA0]/10 flex items-center justify-center mb-4">
                 <Headset size={18} weight="duotone" className="text-[#4DFFA0]" />
               </div>
@@ -167,11 +167,11 @@ export default function Servicos() {
           <motion.div
             custom={1}
             variants={cardReveal}
-            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] min-h-[320px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
+            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] min-h-[280px] sm:min-h-[320px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
           >
             {cards[1].visual}
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-7">
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
               <div className="w-9 h-9 rounded-xl bg-[#4DFFA0]/10 flex items-center justify-center mb-4">
                 <ShieldCheck size={18} weight="duotone" className="text-[#4DFFA0]" />
               </div>
@@ -184,11 +184,11 @@ export default function Servicos() {
           <motion.div
             custom={2}
             variants={cardReveal}
-            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] min-h-[280px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
+            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] min-h-[260px] sm:min-h-[280px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
           >
             {cards[2].visual}
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-7">
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
               <div className="w-9 h-9 rounded-xl bg-[#4DFFA0]/10 flex items-center justify-center mb-4">
                 <Users size={18} weight="duotone" className="text-[#4DFFA0]" />
               </div>
@@ -201,11 +201,11 @@ export default function Servicos() {
           <motion.div
             custom={3}
             variants={cardReveal}
-            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] lg:col-span-2 min-h-[280px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
+            className="relative rounded-3xl overflow-hidden bg-[#242424] border border-[#2e2e2e] lg:col-span-2 min-h-[260px] sm:min-h-[280px] group hover:border-[#4DFFA0]/20 transition-colors duration-500"
           >
             {cards[3].visual}
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
               <div className="w-9 h-9 rounded-xl bg-[#4DFFA0]/10 flex items-center justify-center mb-4">
                 <Cpu size={18} weight="duotone" className="text-[#4DFFA0]" />
               </div>
