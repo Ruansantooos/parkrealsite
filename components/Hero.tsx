@@ -30,7 +30,7 @@ export default function Hero() {
       {/* Video background */}
       <motion.div
         style={{ y: videoY }}
-        className="absolute inset-0 w-full h-[120%] -top-[10%] lg:h-[115%] lg:-top-[7.5%]"
+        className="absolute inset-0 w-full h-[108%] -top-[4%] lg:h-[106%] lg:-top-[3%]"
       >
         <video
           autoPlay
