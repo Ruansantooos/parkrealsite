@@ -62,11 +62,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Logo — desktop only, canto direito */}
-          <div className="hidden md:flex absolute right-0">
-            <img src="/logo.svg" alt="Park Real" className="h-10 w-auto" />
-          </div>
-
           {/* Mobile hamburger — canto direito */}
           <div className="md:hidden w-full flex justify-end">
             <button
