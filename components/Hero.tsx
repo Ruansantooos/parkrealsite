@@ -30,43 +30,55 @@ export default function Hero() {
       {/* Video background */}
       <motion.div
         style={{ y: videoY }}
-        className="absolute inset-0 w-full h-[115%] -top-[7.5%]"
+        className="absolute inset-0 w-full h-[120%] -top-[10%] lg:h-[115%] lg:-top-[7.5%]"
       >
         <video
           autoPlay
           muted
           playsInline
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover object-[60%_center] lg:object-center"
         >
           <source src="/video hero/hero.mp4" type="video/mp4" />
           <source src="/video hero/hero.webm" type="video/webm" />
         </video>
-        <div className="absolute inset-0 bg-black/50" />
+
+        {/* Base overlay */}
+        <div className="absolute inset-0 bg-black/50 lg:bg-black/45" />
+
+        {/* Mobile: strong top gradient to darken sky area */}
+        <div className="absolute top-0 left-0 right-0 h-[45%] bg-gradient-to-b from-[#111]/90 via-[#111]/50 to-transparent lg:hidden" />
+
+        {/* Mobile: left gradient so text is readable */}
+        <div className="absolute inset-y-0 left-0 w-[65%] bg-gradient-to-r from-black/80 to-transparent lg:hidden" />
+
+        {/* Desktop: right-side hide video logo */}
+        <div className="absolute inset-y-0 right-0 w-[18%] bg-gradient-to-l from-[#1e1e1e] to-transparent hidden lg:block" />
 
         {/* Scroll-driven extra darkening */}
         <motion.div
           style={{ opacity: overlayOpacity }}
           className="absolute inset-0 bg-black pointer-events-none"
         />
-        <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/80 to-transparent" />
+
+        {/* Bottom gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-[45%] lg:h-[50%] bg-gradient-to-t from-[#111] via-[#111]/80 to-transparent" />
       </motion.div>
 
-      {/* Text content */}
+      {/* Text content — mobile: top-aligned, desktop: center-aligned */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
-        className="relative z-10 w-full px-8 lg:px-16 min-h-[100dvh] flex flex-col justify-center pt-28 pb-32 max-w-2xl"
+        className="relative z-10 w-full px-6 lg:px-16 min-h-[100dvh] flex flex-col justify-start lg:justify-center pt-28 lg:pt-0 pb-32 max-w-xl lg:max-w-2xl"
       >
         {/* Headline */}
-        <div className="mb-6 overflow-hidden">
+        <div className="mb-5 overflow-hidden">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[2.8rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.08] font-light text-white tracking-tight"
+            className="text-[2.4rem] sm:text-[2.8rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.05] font-light text-white tracking-tight"
           >
-            <span className="font-extralight text-white/50">Real</span><br />
-            <span className="font-bold">Experiência.</span><br />
-            <span className="font-extralight text-white/70">Real Segurança.</span>
+            <span className="font-extralight text-white/45">Novo conceito</span><br />
+            <span className="font-bold">em estacionar.</span>
           </motion.h1>
         </div>
 
@@ -75,7 +87,7 @@ export default function Hero() {
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="w-12 h-px bg-[#4DFFA0] origin-left mb-6"
+          className="w-10 h-px bg-[#4DFFA0] origin-left mb-5"
         />
 
         {/* Subtitle */}
@@ -83,29 +95,28 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="text-white/50 text-sm lg:text-base leading-relaxed max-w-xs font-light mb-12"
+          className="text-white/45 text-sm lg:text-base leading-relaxed max-w-[220px] sm:max-w-xs font-light"
         >
-          Cuidado real com cada detalhe. Tecnologia real a serviço do seu veículo.
+          Cuidamos de cada detalhe para que sua experiência seja realmente única.
         </motion.p>
-
       </motion.div>
 
-      {/* CTAs — bottom right (onde era o WhatsApp) */}
+      {/* CTAs — bottom left */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-8 left-8 lg:left-16 z-20 flex items-center gap-3"
+        className="absolute bottom-10 left-6 lg:left-16 z-20 flex flex-row items-center gap-3"
       >
         <a
           href="#contato"
-          className="px-6 py-3 rounded-full border border-white/30 text-white/80 font-light text-sm hover:border-white/60 hover:text-white transition-colors duration-300 active:scale-95 whitespace-nowrap"
+          className="px-6 py-3 rounded-full border border-white/30 text-white/80 font-light text-sm hover:border-white/60 hover:text-white transition-all duration-300 active:scale-95 whitespace-nowrap backdrop-blur-sm"
         >
           Reservar Vaga
         </a>
         <a
           href="#servicos"
-          className="px-6 py-3 rounded-full border border-white/30 text-white/80 font-light text-sm hover:border-white/60 hover:text-white transition-colors duration-300 active:scale-95 whitespace-nowrap"
+          className="px-6 py-3 rounded-full border border-white/20 text-white/55 font-light text-sm hover:border-white/50 hover:text-white/80 transition-all duration-300 active:scale-95 whitespace-nowrap backdrop-blur-sm"
         >
           Ver Serviços
         </a>
