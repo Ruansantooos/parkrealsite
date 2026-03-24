@@ -6,7 +6,6 @@ import Servicos from '@/components/Servicos'
 import Localizacao from '@/components/Localizacao'
 import Contato from '@/components/Contato'
 import Footer from '@/components/Footer'
-import WhatsApp from '@/components/WhatsApp'
 import SmoothScroll from '@/components/SmoothScroll'
 import ScrollProgress from '@/components/ScrollProgress'
 import RadarNav from '@/components/RadarNav'
@@ -26,7 +25,6 @@ export default function Home() {
         </div>
       </main>
       <Footer />
-      <WhatsApp />
       <RadarNav />
     </SmoothScroll>
   )
