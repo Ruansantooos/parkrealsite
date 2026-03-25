@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 src="/logo.svg"
                 alt="Park Real"
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </div>
             <p className="text-[#71717a] text-sm leading-relaxed">

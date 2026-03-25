@@ -45,6 +45,10 @@ export default function Navbar() {
                 : 'bg-[#1e1e1e]/70 backdrop-blur-sm border border-white/5 shadow-sm'
             }`}
           >
+            <div className="flex items-center gap-2 mr-2">
+              <img src="/logo.svg" alt="Park Real" className="h-7 w-auto" />
+              <span className="text-white font-semibold text-xs tracking-wider uppercase">Park Real</span>
+            </div>
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -64,7 +68,7 @@ export default function Navbar() {
 
           {/* Mobile — Floating Pill with Logo */}
           <div className="md:hidden w-full flex justify-between items-center px-4 py-3 rounded-full bg-[#111111]/75 backdrop-blur-xl border border-white/10 shadow-xl">
-             <img src="/logo.svg" alt="Park Real" className="h-9 w-auto ml-1" />
+             <img src="/logo.svg" alt="Park Real" className="h-11 w-auto ml-1" />
              <button
                className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
                onClick={() => setMenuOpen((prev) => !prev)}
@@ -102,7 +106,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
                 <div className="flex items-center gap-2">
                    <div className="w-10 h-10 rounded-lg bg-[#4DFFA0]/10 flex items-center justify-center">
-                     <img src="/logo.svg" alt="" className="h-6 w-auto" />
+                     <img src="/logo.svg" alt="" className="h-8 w-auto" />
                    </div>
                    <span className="text-white font-medium text-sm">Park Real</span>
                 </div>
