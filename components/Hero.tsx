@@ -103,19 +103,19 @@ export default function Hero() {
         </motion.p>
       </motion.div>
 
-      {/* Hero Logo — Positioned specifically inside the user-indicated area (Fender) */}
+      {/* Hero Logo — Mobile Large */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute inset-0 z-10 flex items-center justify-start pointer-events-none px-6 lg:px-16"
+        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none lg:hidden"
       >
-        <div className="relative w-[95vw] aspect-[2/1] mt-24 lg:hidden">
+        <div className="relative w-[180%] h-[80vh] ml-[-40%] mt-12">
           <Image
             src="/logo.svg"
             alt="Park Real Logo"
             fill
-            className="object-contain opacity-95"
+            className="object-contain opacity-95 lg:opacity-100"
             priority
           />
         </div>
