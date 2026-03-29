@@ -12,11 +12,11 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 text-center lg:text-left">
           {/* Brand */}
           <div className="max-w-xs">
-            <div className="mb-4">
+            <div className="mb-4 flex justify-center lg:justify-start">
               <img
                 src="/logo/logo-correto.svg?v=1"
                 alt="Park Real"
-                className="h-14 w-auto mx-auto lg:mx-0 object-contain"
+                className="h-14 w-auto object-contain"
               />
             </div>
             <p className="text-[#71717a] text-sm leading-relaxed">
