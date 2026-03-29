@@ -113,7 +113,7 @@ export default function Hero() {
       >
         <div className="relative w-[180vw] flex-shrink-0 h-[80vh] mt-12">
           <Image
-            src="/logo/logo-real.svg"
+            src="/logo/logo-correto.svg"
             alt="Park Real Logo"
             fill
             className="object-contain opacity-95 lg:opacity-100"

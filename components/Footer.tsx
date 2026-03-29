@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="max-w-xs">
             <div className="mb-4">
               <img
-                src="/logo/logo-real.svg"
+                src="/logo/logo-correto.svg"
                 alt="Park Real"
                 className="h-14 w-auto object-contain"
               />
