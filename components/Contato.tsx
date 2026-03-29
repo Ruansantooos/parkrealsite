@@ -66,7 +66,7 @@ export default function Contato() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center mb-8"
           >
-            <img src="/logo/logo-real.svg" alt="Park Real Estacionamentos" className="h-20 w-auto" />
+            <img src="/logo/logo-real-transparent.png" alt="Park Real Estacionamentos" className="h-20 w-auto" />
           </motion.div>
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight leading-[1.08] text-[#f0f0f0]">
             <RevealText delay={0.1}>Vamos <span className="font-bold">conversar</span></RevealText>
