@@ -67,7 +67,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile — Floating Pill with Logo */}
-          <div className="md:hidden w-full flex justify-between items-center px-4 py-3 rounded-full bg-[#111111]/75 backdrop-blur-xl border border-white/10 shadow-xl">
+          <div className="md:hidden w-full flex justify-between items-center px-4 py-3 rounded-full bg-[#111111]/40 backdrop-blur-lg border border-white/10 shadow-xl">
              <img src="/logo/logo-real.svg" alt="Park Real" className="h-11 w-auto ml-1" />
              <button
                className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -90,7 +90,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
               onClick={() => setMenuOpen(false)}
             />
 
@@ -100,7 +100,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed top-20 right-6 left-6 z-50 rounded-3xl overflow-hidden bg-[#161616]/95 backdrop-blur-2xl border border-white/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]"
+              className="md:hidden fixed top-20 right-6 left-6 z-50 rounded-3xl overflow-hidden bg-[#161616]/60 backdrop-blur-2xl border border-white/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]"
             >
               {/* Card Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
