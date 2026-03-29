@@ -111,9 +111,9 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none lg:hidden"
       >
-        <div className="relative w-[180vw] flex-shrink-0 h-[80vh] mt-12">
+        <div className="relative w-[90vw] flex-shrink-0 h-[40vh] mt-24">
           <Image
-            src="/logo/logo-correto.svg"
+            src="/logo/logo-correto.svg?v=1"
             alt="Park Real Logo"
             fill
             className="object-contain opacity-95 lg:opacity-100"
