@@ -58,16 +58,6 @@ export default function Contato() {
 
         {/* Header — centralizado */}
         <div className="mb-14">
-          {/* Logo centralizado */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="flex justify-center mb-8"
-          >
-            <img src="/logo/logo-correto.svg?v=1" alt="Park Real Estacionamentos" className="h-20 w-auto" />
-          </motion.div>
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight leading-[1.08] text-[#f0f0f0]">
             <RevealText delay={0.1}>Vamos <span className="font-bold">conversar</span></RevealText>
           </h2>

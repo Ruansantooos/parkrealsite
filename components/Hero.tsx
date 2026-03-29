@@ -35,8 +35,10 @@ export default function Hero() {
       >
         <video
           autoPlay
+          loop
           muted
           playsInline
+          disablePictureInPicture
           className="w-full h-full object-cover object-[center_20%] pointer-events-none"
         >
           <source src="/video hero/hero.mp4" type="video/mp4" />
