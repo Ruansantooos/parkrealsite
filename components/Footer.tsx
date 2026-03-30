@@ -79,9 +79,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-[#2e2e2e] text-center">
+        <div className="mt-10 pt-6 border-t border-[#2e2e2e] flex flex-col sm:flex-row items-center justify-between gap-2 text-center">
           <p className="text-[#71717a] text-xs">
             &copy; 2025 Park Real Estacionamentos. {dict.footer.todosDireitos}
+          </p>
+          <p className="text-[#71717a] text-xs">
+            Desenvolvido por{' '}
+            <a
+              href="https://www.instagram.com/golden.ai_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#4DFFA0] hover:underline transition-all"
+            >
+              Golden AI
+            </a>
           </p>
         </div>
       </div>
