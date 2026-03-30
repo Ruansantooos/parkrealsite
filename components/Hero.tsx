@@ -35,7 +35,6 @@ export default function Hero() {
       >
         <video
           autoPlay
-          loop
           muted
           playsInline
           disablePictureInPicture
@@ -118,6 +117,20 @@ export default function Hero() {
             className="w-full h-full object-contain opacity-95 lg:opacity-100"
           />
         </div>
+      </motion.div>
+
+      {/* Hero Logo — Desktop Top Right */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-8 right-8 lg:top-10 lg:right-12 z-20 hidden lg:block pointer-events-none"
+      >
+        <img
+          src="/logo/logo-correto.svg?v=1"
+          alt="Park Real Logo"
+          className="h-10 xl:h-12 w-auto opacity-80"
+        />
       </motion.div>
 
       {/* CTAs — bottom left */}
