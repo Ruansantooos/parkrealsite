@@ -1,0 +1,107 @@
+{
+  "navbar": {
+    "inicio": "Início",
+    "servicos": "Serviços",
+    "mensalista": "Mensalista",
+    "localizacao": "Localização",
+    "contato": "Contato",
+    "faleConosco": "Fale Conosco"
+  },
+  "hero": {
+    "novoConceito": "Novo conceito",
+    "emEstacionar": "em estacionar.",
+    "detalhe": "Cuidamos de cada detalhe para que sua experiência seja realmente única.",
+    "reservarVaga": "Reservar Vaga",
+    "verServicos": "Ver Serviços"
+  },
+  "servicos": {
+    "excelencia": "A Excelência Está Nos Detalhes",
+    "pqEscolher": "Por que",
+    "escolher": "escolher",
+    "aParkReal": "a Park Real?",
+    "atendimento": "Atendimento Personalizado",
+    "atendimentoDesc": "Profissionais treinados nos mais rigorosos padrões de cortesia e eficiência.",
+    "seguranca": "Segurança Avançada",
+    "segurancaDesc": "Monitoramento 24h com câmeras de IA e detecção de incidentes em tempo real.",
+    "equipe": "Atendimento Personalizado",
+    "equipeDesc": "Equipe apaixonada por precisão, do manobrista ao gerente.",
+    "tech": "Autotech de Ponta",
+    "techDesc": "Totens de autoatendimento, leitura de placas e controle digital de ocupação."
+  },
+  "mensalista": {
+    "plano": "Plano Mensalista",
+    "assine": "Assine o seu",
+    "espaco": "espaço",
+    "exclusividade": "com exclusividade",
+    "desc1": "Fazer o mensal na Park Real é garantir tranquilidade todos os dias. Tenha acesso prioritário, atendimento VIP e a certeza de que seu veículo está no lugar mais seguro.",
+    "vagaGarantida": "Vaga Garantida",
+    "vagaGarantidaDesc": "Sua vaga exclusiva, sempre disponível 24 horas por dia.",
+    "segurancaPremium": "Segurança Premium",
+    "segurancaPremiumDesc": "Monitoramento contínuo e equipe dedicada à proteção do seu veículo.",
+    "acessoLivre": "Acesso Livre",
+    "acessoLivreDesc": "Entrada e saída rápidas via sistema automatizado e totens inteligentes.",
+    "vagasLimitadas": "Vagas Limitadas",
+    "reservaMensal": "Reserva Mensal",
+    "faleEquipe": "Fale diretamente com nossa equipe via WhatsApp para consultar valores e disponibilidade atualizada.",
+    "atendimentoPrio": "Atendimento prioritário",
+    "pagamentoFacil": "Pagamento facilitado",
+    "semBurocracia": "Sem burocracia na entrada",
+    "fazerReserva": "Fazer Reserva Agora"
+  },
+  "localizacao": {
+    "nossa": "Nossa",
+    "localizacaoTitle": "Localização",
+    "luxoEncontra": "Onde o luxo encontra a conveniência no coração de São Paulo.",
+    "comoChegar": "Como chegar",
+    "ondeEncontrar": "Onde nos",
+    "encontrar": "encontrar",
+    "parkReal": "Park Real.",
+    "horariosLabel": "Horários",
+    "horariosValue": "Segunda a Sexta: 07h às 22h\nSábado e Domingo: 08h às 20h",
+    "telefoneLabel": "Telefone",
+    "whatsAppLabel": "WhatsApp",
+    "whatsAppBtn": "Enviar mensagem"
+  },
+  "contato": {
+    "precisaDe": "Precisa de",
+    "ajuda": "Ajuda?",
+    "equipeDisposicao": "Nossa equipe está à disposição para atendimento premium.",
+    "falarWhatsApp": "Falar no WhatsApp",
+    "vamos": "Vamos",
+    "conversar": "conversar",
+    "estamosProntos": "Estamos prontos para atender você. Escolha o canal de sua preferência.",
+    "ligue": "Ligue para nós",
+    "emailLabel": "E-mail",
+    "ouEnvie": "ou envie uma mensagem",
+    "sucessoTitulo": "Mensagem enviada!",
+    "sucessoTexto": "Entraremos em contato em breve.",
+    "enviarOutra": "Enviar outra mensagem",
+    "nome": "Nome",
+    "nomePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "seu@email.com",
+    "telefone": "Telefone",
+    "telefonePlaceholder": "(XX) XXXXX-XXXX",
+    "mensagemLabel": "Mensagem",
+    "mensagemPlaceholder": "Como podemos ajudar você?",
+    "enviarMensagem": "Enviar mensagem"
+  },
+  "footer": {
+    "slogan": "Qualidade, segurança e atendimento de excelência.",
+    "todosDireitos": "Todos os direitos reservados.",
+    "politica": "Política de Privacidade",
+    "termos": "Termos de Uso"
+  },
+  "marquee": {
+    "atendimento": "ATENDIMENTO PREMIUM",
+    "seguranca": "SEGURANÇA TOTAL",
+    "profissionais": "PROFISSIONAIS QUALIFICADOS",
+    "parkReal": "PARK REAL"
+  },
+  "scrollPhrase": {
+    "naoEntregamos": "Não entregamos ",
+    "vaga": "apenas uma vaga.",
+    "entregamos": "Entregamos a ",
+    "perfeicao": "perfeição",
+    "emMovimento": " em movimento."
+  }
+}

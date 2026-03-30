@@ -1,0 +1,107 @@
+{
+  "navbar": {
+    "inicio": "Home",
+    "servicos": "Services",
+    "mensalista": "Monthly",
+    "localizacao": "Location",
+    "contato": "Contact",
+    "faleConosco": "Contact Us"
+  },
+  "hero": {
+    "novoConceito": "New concept",
+    "emEstacionar": "in parking.",
+    "detalhe": "We take care of every detail so your experience is truly unique.",
+    "reservarVaga": "Reserve Spot",
+    "verServicos": "View Services"
+  },
+  "servicos": {
+    "excelencia": "Excellence is in the Details",
+    "pqEscolher": "Why",
+    "escolher": "choose",
+    "aParkReal": "Park Real?",
+    "atendimento": "Personalized Service",
+    "atendimentoDesc": "Professionals trained to the highest standards of courtesy and efficiency.",
+    "seguranca": "Advanced Security",
+    "segurancaDesc": "24/7 monitoring with AI cameras and real-time incident detection.",
+    "equipe": "Personalized Service",
+    "equipeDesc": "A team passionate about precision, from valet to manager.",
+    "tech": "Cutting-edge Autotech",
+    "techDesc": "Self-service totems, license plate reading, and digital occupancy control."
+  },
+  "mensalista": {
+    "plano": "Monthly Plan",
+    "assine": "Subscribe to your",
+    "espaco": "space",
+    "exclusividade": "with exclusivity",
+    "desc1": "Having a monthly plan at Park Real guarantees peace of mind every day. Enjoy priority access, VIP service, and the certainty that your vehicle is in the safest place.",
+    "vagaGarantida": "Guaranteed Spot",
+    "vagaGarantidaDesc": "Your exclusive spot, always available 24 hours a day.",
+    "segurancaPremium": "Premium Security",
+    "segurancaPremiumDesc": "Continuous monitoring and a dedicated team to protect your vehicle.",
+    "acessoLivre": "Free Access",
+    "acessoLivreDesc": "Fast entry and exit via automated systems and smart totems.",
+    "vagasLimitadas": "Limited Spots",
+    "reservaMensal": "Monthly Booking",
+    "faleEquipe": "Speak directly with our team via WhatsApp to check current rates and availability.",
+    "atendimentoPrio": "Priority service",
+    "pagamentoFacil": "Easy payment",
+    "semBurocracia": "No bureaucracy at entry",
+    "fazerReserva": "Book Now"
+  },
+  "localizacao": {
+    "nossa": "Our",
+    "localizacaoTitle": "Location",
+    "luxoEncontra": "Where luxury meets convenience in the heart of São Paulo.",
+    "comoChegar": "Get Directions",
+    "ondeEncontrar": "Where to",
+    "encontrar": "find us",
+    "parkReal": "Park Real.",
+    "horariosLabel": "Hours",
+    "horariosValue": "Monday to Friday: 07h to 22h\nSaturday and Sunday: 08h to 20h",
+    "telefoneLabel": "Phone",
+    "whatsAppLabel": "WhatsApp",
+    "whatsAppBtn": "Send message"
+  },
+  "contato": {
+    "precisaDe": "Need",
+    "ajuda": "Help?",
+    "equipeDisposicao": "Our team is available for premium support.",
+    "falarWhatsApp": "Message on WhatsApp",
+    "vamos": "Let's",
+    "conversar": "talk",
+    "estamosProntos": "We are ready to assist you. Choose your preferred channel.",
+    "ligue": "Call us",
+    "emailLabel": "E-mail",
+    "ouEnvie": "or send a message",
+    "sucessoTitulo": "Message sent!",
+    "sucessoTexto": "We will contact you shortly.",
+    "enviarOutra": "Send another message",
+    "nome": "Name",
+    "nomePlaceholder": "Your full name",
+    "emailPlaceholder": "your@email.com",
+    "telefone": "Phone",
+    "telefonePlaceholder": "(XX) XXXXX-XXXX",
+    "mensagemLabel": "Message",
+    "mensagemPlaceholder": "How can we help you?",
+    "enviarMensagem": "Send message"
+  },
+  "footer": {
+    "slogan": "Quality, safety, and excellent service.",
+    "todosDireitos": "All rights reserved.",
+    "politica": "Privacy Policy",
+    "termos": "Terms of Service"
+  },
+  "marquee": {
+    "atendimento": "PREMIUM SERVICE",
+    "seguranca": "TOTAL SECURITY",
+    "profissionais": "QUALIFIED PROFESSIONALS",
+    "parkReal": "PARK REAL"
+  },
+  "scrollPhrase": {
+    "naoEntregamos": "We don't just provide ",
+    "vaga": "a parking spot.",
+    "entregamos": "We deliver ",
+    "perfeicao": "perfection",
+    "emMovimento": " in motion."
+  }
+}

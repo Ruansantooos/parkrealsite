@@ -3,18 +3,24 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { List, X } from '@phosphor-icons/react'
-
-const navLinks = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Mensalista', href: '#mensalista' },
-  { label: 'Localização', href: '#localizacao' },
-  { label: 'Contato', href: '#contato' },
-]
+import { usePathname, useRouter } from 'next/navigation'
+import { useI18n } from './I18nProvider'
 
 export default function Navbar() {
+  const { dict, locale } = useI18n()
+  const router = useRouter()
+  const pathname = usePathname()
+  
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const navLinks = [
+    { label: dict.navbar.inicio, href: '#inicio' },
+    { label: dict.navbar.servicos, href: '#servicos' },
+    { label: dict.navbar.mensalista, href: '#mensalista' },
+    { label: dict.navbar.localizacao, href: '#localizacao' },
+    { label: dict.navbar.contato, href: '#contato' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +32,33 @@ export default function Navbar() {
 
   const handleLinkClick = () => {
     setMenuOpen(false)
+  }
+
+  const switchLocale = (newLocale: string) => {
+    // Removemos o local antigo da URL atual
+    let currentPath = pathname
+    if (currentPath.startsWith(`/${locale}`)) {
+      currentPath = currentPath.replace(`/${locale}`, '') || '/'
+    }
+    router.push(`/${newLocale}${currentPath === '/' ? '' : currentPath}`)
+    setMenuOpen(false)
+  }
+
+  const LanguageSwitcher = ({ mobile = false }: { mobile?: boolean }) => {
+    return (
+      <div className={`flex items-center gap-3 ${mobile ? 'justify-center py-4 border-t border-white/5' : 'ml-4'}`}>
+        {['pt', 'en', 'es'].map((l) => (
+          <button
+            key={l}
+            onClick={() => switchLocale(l)}
+            className={`text-xs font-semibold uppercase tracking-wider transition-all duration-200 
+              ${locale === l ? 'text-[#4DFFA0]' : 'text-[#71717a] hover:text-[#f0f0f0]'}`}
+          >
+            {l}
+          </button>
+        ))}
+      </div>
+    )
   }
 
   return (
@@ -62,8 +95,12 @@ export default function Navbar() {
               href="#contato"
               className="ml-1 px-5 py-2 rounded-full bg-white text-[#111111] text-sm font-semibold transition-all duration-200 hover:bg-[#4DFFA0] hover:text-[#111111] active:scale-95 whitespace-nowrap"
             >
-              Fale Conosco
+              {dict.navbar.faleConosco}
             </a>
+            
+            {/* Divisor */}
+            <div className="w-px h-4 bg-white/10 ml-2" />
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile — Floating Pill with Logo */}
@@ -133,15 +170,17 @@ export default function Navbar() {
               </div>
 
               {/* Action Button */}
-              <div className="px-6 py-6 pt-4">
+              <div className="px-6 py-4">
                 <a
                   href="#contato"
                   onClick={handleLinkClick}
                   className="block w-full text-center px-5 py-4 rounded-2xl bg-white text-[#111111] font-bold text-sm transition-all hover:bg-[#4DFFA0] active:scale-[0.98]"
                 >
-                  Fale Conosco
+                  {dict.navbar.faleConosco}
                 </a>
               </div>
+              
+              <LanguageSwitcher mobile={true} />
             </motion.div>
           </>
         )}
