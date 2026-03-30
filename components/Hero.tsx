@@ -127,9 +127,9 @@ export default function Hero() {
         className="absolute top-8 right-8 lg:top-10 lg:right-12 z-20 hidden lg:block pointer-events-none"
       >
         <img
-          src="/logo/logo-correto.svg?v=1"
+          src="/logo/logo-correto.svg?v=2"
           alt="Park Real Logo"
-          className="h-14 xl:h-16 w-auto opacity-80"
+          className="h-20 xl:h-24 w-auto opacity-80"
         />
       </motion.div>
 
