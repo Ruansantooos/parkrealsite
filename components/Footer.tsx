@@ -1,6 +1,7 @@
 const navLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Mensalista', href: '#mensalista' },
   { label: 'Localização', href: '#localizacao' },
   { label: 'Contato', href: '#contato' },
 ]

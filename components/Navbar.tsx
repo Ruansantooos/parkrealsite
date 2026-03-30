@@ -7,6 +7,7 @@ import { List, X } from '@phosphor-icons/react'
 const navLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Mensalista', href: '#mensalista' },
   { label: 'Localização', href: '#localizacao' },
   { label: 'Contato', href: '#contato' },
 ]
@@ -45,9 +46,8 @@ export default function Navbar() {
                 : 'bg-[#1e1e1e]/70 backdrop-blur-sm border border-white/5 shadow-sm'
             }`}
           >
-            <div className="flex items-center gap-2 mr-2">
+            <div className="flex items-center mr-2">
               <img src="/logo/logo-correto.svg?v=1" alt="Park Real" className="h-7 w-auto" />
-              <span className="text-white font-semibold text-xs tracking-wider uppercase">Park Real</span>
             </div>
             {navLinks.map((link) => (
               <a
@@ -104,10 +104,7 @@ export default function Navbar() {
             >
               {/* Card Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
-                <div className="flex items-center gap-2">
-                   <div className="w-10 h-10 rounded-lg bg-[#4DFFA0]/10 flex items-center justify-center">
-                     <img src="/logo/logo-correto.svg?v=1" alt="" className="h-8 w-auto" />
-                   </div>
+                <div className="flex items-center">
                    <span className="text-white font-medium text-sm">Park Real</span>
                 </div>
                 <button

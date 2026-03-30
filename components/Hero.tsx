@@ -41,8 +41,7 @@ export default function Hero() {
           disablePictureInPicture
           className="w-full h-full object-cover object-[center_20%] pointer-events-none"
         >
-          <source src="/video hero/hero.mp4" type="video/mp4" />
-          <source src="/video hero/hero.webm" type="video/webm" />
+          <source src="/video hero/hero 2.mp4" type="video/mp4" />
         </video>
 
         {/* Base overlay */}

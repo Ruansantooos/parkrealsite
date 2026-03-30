@@ -9,7 +9,7 @@ const cards = [
     id: 'atendimento',
     icon: Headset,
     tag: '01',
-    title: 'Atendimento de Elite',
+    title: 'Atendimento Personalizado',
     description: 'Profissionais treinados nos mais rigorosos padrões de cortesia e eficiência.',
     accent: '#4DFFA0',
     visual: (
@@ -30,7 +30,7 @@ const cards = [
     id: 'seguranca',
     icon: ShieldCheck,
     tag: '02',
-    title: 'Segurança Blindada',
+    title: 'Segurança Avançada',
     description: 'Monitoramento 24h com câmeras de IA e detecção de incidentes em tempo real.',
     accent: '#4DFFA0',
     visual: (
@@ -55,7 +55,7 @@ const cards = [
     id: 'equipe',
     icon: Users,
     tag: '03',
-    title: 'Profissionais Certificados',
+    title: 'Profissionais Qualificados',
     description: 'Equipe apaixonada por precisão, do manobrista ao supervisor.',
     accent: '#4DFFA0',
     visual: (

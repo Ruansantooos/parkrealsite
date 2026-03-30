@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import ScrollPhrase from '@/components/ScrollPhrase'
 import Marquee from '@/components/Marquee'
 import Servicos from '@/components/Servicos'
+import Mensalista from '@/components/Mensalista'
 import Localizacao from '@/components/Localizacao'
 import Contato from '@/components/Contato'
 import Footer from '@/components/Footer'
@@ -20,6 +21,7 @@ export default function Home() {
         <ScrollPhrase />
         <Marquee />
         <Servicos />
+        <Mensalista />
         <Localizacao />
         <Contato />
         </div>
