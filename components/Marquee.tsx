@@ -3,19 +3,9 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ShieldCheck, Star, Users, Car } from '@phosphor-icons/react'
+import { useI18n } from './I18nProvider'
 
-const items = [
-  { icon: Star, text: 'ATENDIMENTO PREMIUM' },
-  { icon: ShieldCheck, text: 'SEGURANÇA TOTAL' },
-  { icon: Users, text: 'PROFISSIONAIS QUALIFICADOS' },
-  { icon: Car, text: 'PARK REAL' },
-  { icon: Star, text: 'ATENDIMENTO PREMIUM' },
-  { icon: ShieldCheck, text: 'SEGURANÇA TOTAL' },
-  { icon: Users, text: 'PROFISSIONAIS QUALIFICADOS' },
-  { icon: Car, text: 'PARK REAL' },
-]
-
-function MarqueeTrack({ reverse = false }: { reverse?: boolean }) {
+function MarqueeTrack({ reverse = false, items }: { reverse?: boolean, items: any[] }) {
   return (
     <div className="flex overflow-hidden">
       <motion.div
@@ -50,15 +40,28 @@ export default function Marquee() {
   })
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0])
 
+  const { dict } = useI18n()
+
+  const items = [
+    { icon: Star, text: dict.marquee.atendimento },
+    { icon: ShieldCheck, text: dict.marquee.seguranca },
+    { icon: Users, text: dict.marquee.profissionais },
+    { icon: Car, text: dict.marquee.parkReal },
+    { icon: Star, text: dict.marquee.atendimento },
+    { icon: ShieldCheck, text: dict.marquee.seguranca },
+    { icon: Users, text: dict.marquee.profissionais },
+    { icon: Car, text: dict.marquee.parkReal },
+  ]
+
   return (
     <motion.div
       ref={ref}
       style={{ opacity }}
       className="border-y border-[#333333] bg-[#232323] overflow-hidden"
     >
-      <MarqueeTrack />
+      <MarqueeTrack items={items} />
       <div className="border-t border-[#333333]">
-        <MarqueeTrack reverse />
+        <MarqueeTrack reverse items={items} />
       </div>
     </motion.div>
   )

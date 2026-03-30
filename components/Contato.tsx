@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, EnvelopeSimple, CheckCircle } from '@phosphor-icons/react'
 import RevealText from '@/components/RevealText'
+import { useI18n } from './I18nProvider'
 
 type FormData = {
   name: string
@@ -12,36 +13,37 @@ type FormData = {
   message: string
 }
 
-const contactMethods = [
-  {
-    id: 'whatsapp',
-    icon: null,
-    label: 'WhatsApp',
-    value: '(11) 98181-7779',
-    href: 'https://wa.me/5511981817779',
-  },
-  {
-    id: 'telefone',
-    icon: Phone,
-    label: 'Ligue para nós',
-    value: '(11) 98181-7779',
-    href: 'tel:+5511981817779',
-  },
-  {
-    id: 'email',
-    icon: EnvelopeSimple,
-    label: 'E-mail',
-    value: 'contato@parkreal.com.br',
-    href: 'mailto:contato@parkreal.com.br',
-  },
-]
-
 const inputClass =
   'w-full bg-[#262626] border border-[#333333] rounded-xl px-4 py-4 text-[#f0f0f0] placeholder-[#a1a1aa] focus:border-[#4DFFA0]/80 outline-none transition-colors duration-200 text-sm'
 
 export default function Contato() {
+  const { dict } = useI18n()
   const [form, setForm] = useState<FormData>({ name: '', email: '', phone: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+
+  const contactMethods = [
+    {
+      id: 'whatsapp',
+      icon: null,
+      label: 'WhatsApp',
+      value: '(11) 98181-7779',
+      href: 'https://wa.me/5511981817779',
+    },
+    {
+      id: 'telefone',
+      icon: Phone,
+      label: dict.contato.ligue,
+      value: '(11) 98181-7779',
+      href: 'tel:+5511981817779',
+    },
+    {
+      id: 'email',
+      icon: EnvelopeSimple,
+      label: dict.contato.emailLabel,
+      value: 'contato@parkreal.com.br',
+      href: 'mailto:contato@parkreal.com.br',
+    },
+  ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -59,7 +61,7 @@ export default function Contato() {
         {/* Header — centralizado */}
         <div className="mb-14">
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight leading-[1.08] text-[#f0f0f0]">
-            <RevealText delay={0.1}>Vamos <span className="font-bold">conversar</span></RevealText>
+            <RevealText delay={0.1}>{dict.contato.vamos} <span className="font-bold">{dict.contato.conversar}</span></RevealText>
           </h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -68,7 +70,7 @@ export default function Contato() {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="text-white/40 font-light text-base mt-4 max-w-sm mx-auto"
           >
-            Estamos prontos para atender você. Escolha o canal de sua preferência.
+            {dict.contato.estamosProntos}
           </motion.p>
         </div>
 
@@ -118,7 +120,7 @@ export default function Contato() {
           className="flex items-center gap-4 mb-12"
         >
           <div className="flex-1 h-px bg-[#2e2e2e]" />
-          <span className="text-white/20 text-xs tracking-widest uppercase font-light">ou envie uma mensagem</span>
+          <span className="text-white/20 text-xs tracking-widest uppercase font-light">{dict.contato.ouEnvie}</span>
           <div className="flex-1 h-px bg-[#2e2e2e]" />
         </motion.div>
 
@@ -141,14 +143,14 @@ export default function Contato() {
               >
                 <CheckCircle size={56} weight="duotone" className="text-[#4DFFA0]" />
                 <div>
-                  <p className="text-[#f0f0f0] font-semibold text-xl mb-2">Mensagem enviada!</p>
-                  <p className="text-white/40 text-sm font-light">Entraremos em contato em breve.</p>
+                  <p className="text-[#f0f0f0] font-semibold text-xl mb-2">{dict.contato.sucessoTitulo}</p>
+                  <p className="text-white/40 text-sm font-light">{dict.contato.sucessoTexto}</p>
                 </div>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', message: '' }) }}
                   className="mt-2 px-6 py-2.5 rounded-full border border-[#333333] text-[#f0f0f0] text-sm font-light hover:border-[#4DFFA0]/60 hover:bg-[#4DFFA0]/10 transition-colors"
                 >
-                  Enviar outra mensagem
+                  {dict.contato.enviarOutra}
                 </button>
               </motion.div>
             ) : (
@@ -162,27 +164,27 @@ export default function Contato() {
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="name" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">Nome</label>
-                    <input id="name" name="name" type="text" required placeholder="Seu nome completo" value={form.name} onChange={handleChange} className={inputClass} />
+                    <label htmlFor="name" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">{dict.contato.nome}</label>
+                    <input id="name" name="name" type="text" required placeholder={dict.contato.nomePlaceholder} value={form.name} onChange={handleChange} className={inputClass} />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="email" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">E-mail</label>
-                    <input id="email" name="email" type="email" required placeholder="seu@email.com" value={form.email} onChange={handleChange} className={inputClass} />
+                    <label htmlFor="email" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">{dict.contato.emailLabel}</label>
+                    <input id="email" name="email" type="email" required placeholder={dict.contato.emailPlaceholder} value={form.email} onChange={handleChange} className={inputClass} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="phone" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">Telefone</label>
-                  <input id="phone" name="phone" type="tel" placeholder="(XX) XXXXX-XXXX" value={form.phone} onChange={handleChange} className={inputClass} />
+                  <label htmlFor="phone" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">{dict.contato.telefone}</label>
+                  <input id="phone" name="phone" type="tel" placeholder={dict.contato.telefonePlaceholder} value={form.phone} onChange={handleChange} className={inputClass} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">Mensagem</label>
-                  <textarea id="message" name="message" required rows={5} placeholder="Como podemos ajudar você?" value={form.message} onChange={handleChange} className={`${inputClass} resize-none`} />
+                  <label htmlFor="message" className="text-[10px] text-white/30 uppercase tracking-wider font-medium">{dict.contato.mensagemLabel}</label>
+                  <textarea id="message" name="message" required rows={5} placeholder={dict.contato.mensagemPlaceholder} value={form.message} onChange={handleChange} className={`${inputClass} resize-none`} />
                 </div>
                 <button
                   type="submit"
                   className="w-full bg-white text-[#111111] font-semibold py-4 rounded-xl hover:bg-[#4DFFA0] active:scale-[0.99] transition-all duration-300 text-sm mt-1"
                 >
-                  Enviar mensagem
+                  {dict.contato.enviarMensagem}
                 </button>
               </motion.form>
             )}

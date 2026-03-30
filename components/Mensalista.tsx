@@ -3,26 +3,29 @@
 import { motion } from 'framer-motion'
 import { CarProfile, ShieldCheck, Clock, WhatsappLogo, CheckCircle } from '@phosphor-icons/react'
 import RevealText from '@/components/RevealText'
-
-const benefits = [
-  {
-    title: 'Vaga Garantida',
-    description: 'Sua vaga exclusiva, sempre disponível 24 horas por dia.',
-    icon: CarProfile,
-  },
-  {
-    title: 'Segurança Premium',
-    description: 'Monitoramento contínuo e equipe dedicada à proteção do seu veículo.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Acesso Livre',
-    description: 'Entrada e saída rápidas via sistema automatizado e totens inteligentes.',
-    icon: Clock,
-  },
-]
+import { useI18n } from './I18nProvider'
 
 export default function Mensalista() {
+  const { dict } = useI18n()
+
+  const benefits = [
+    {
+      title: dict.mensalista.vagaGarantida,
+      description: dict.mensalista.vagaGarantidaDesc,
+      icon: CarProfile,
+    },
+    {
+      title: dict.mensalista.segurancaPremium,
+      description: dict.mensalista.segurancaPremiumDesc,
+      icon: ShieldCheck,
+    },
+    {
+      title: dict.mensalista.acessoLivre,
+      description: dict.mensalista.acessoLivreDesc,
+      icon: Clock,
+    },
+  ]
+
   return (
     <section id="mensalista" className="py-24 lg:py-32 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background glow effects */}
@@ -35,12 +38,12 @@ export default function Mensalista() {
           <div className="flex-1 text-center lg:text-left">
             <RevealText delay={0}>
               <span className="text-[#4DFFA0] text-[10px] font-medium tracking-[0.35em] uppercase block mb-4">
-                Plano Mensalista
+                {dict.mensalista.plano}
               </span>
             </RevealText>
             <h2 className="text-4xl lg:text-5xl font-light tracking-tight text-[#f0f0f0] leading-[1.08] mb-6">
-              <RevealText delay={0.1}>Assine o seu <span className="font-bold">espaço</span></RevealText>
-              <RevealText delay={0.22}><span className="text-white/40 font-extralight">com exclusividade</span></RevealText>
+              <RevealText delay={0.1}>{dict.mensalista.assine} <span className="font-bold">{dict.mensalista.espaco}</span></RevealText>
+              <RevealText delay={0.22}><span className="text-white/40 font-extralight">{dict.mensalista.exclusividade}</span></RevealText>
             </h2>
             
             <motion.p
@@ -50,7 +53,7 @@ export default function Mensalista() {
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-white/40 font-light text-base mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed"
             >
-              Fazer o mensal na Park Real é garantir tranquilidade todos os dias. Tenha acesso prioritário, atendimento VIP e a certeza de que seu veículo está no lugar mais seguro.
+              {dict.mensalista.desc1}
             </motion.p>
 
             {/* Benefícios */}
@@ -90,17 +93,17 @@ export default function Mensalista() {
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4DFFA0]/10 border border-[#4DFFA0]/20 mb-6">
                   <span className="w-2 h-2 rounded-full bg-[#4DFFA0] animate-pulse" />
-                  <span className="text-[#4DFFA0] text-xs font-medium tracking-wide">Vagas Limitadas</span>
+                  <span className="text-[#4DFFA0] text-xs font-medium tracking-wide">{dict.mensalista.vagasLimitadas}</span>
                 </div>
                 
-                <h3 className="text-2xl font-semibold text-white mb-2">Reserva Mensal</h3>
-                <p className="text-white/40 text-sm font-light mb-8">Fale diretamente com nossa equipe via WhatsApp para consultar valores e disponibilidade atualizada.</p>
+                <h3 className="text-2xl font-semibold text-white mb-2">{dict.mensalista.reservaMensal}</h3>
+                <p className="text-white/40 text-sm font-light mb-8">{dict.mensalista.faleEquipe}</p>
                 
                 <div className="space-y-4 mb-8">
                   {[
-                    'Atendimento prioritário',
-                    'Pagamento facilitado',
-                    'Sem burocracia na entrada'
+                    dict.mensalista.atendimentoPrio,
+                    dict.mensalista.pagamentoFacil,
+                    dict.mensalista.semBurocracia
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <CheckCircle size={18} weight="fill" className="text-[#4DFFA0]" />
@@ -116,7 +119,7 @@ export default function Mensalista() {
                   className="w-full flex items-center justify-center gap-2 bg-[#4DFFA0] text-[#111111] font-semibold py-4 rounded-2xl hover:bg-[#3ce58c] active:scale-[0.98] transition-all duration-300 text-sm"
                 >
                   <WhatsappLogo size={20} weight="fill" />
-                  Fazer Reserva Agora
+                  {dict.mensalista.fazerReserva}
                 </a>
               </div>
             </div>

@@ -3,108 +3,7 @@
 import { motion } from 'framer-motion'
 import { Headset, ShieldCheck, Users, Cpu } from '@phosphor-icons/react'
 import RevealText from '@/components/RevealText'
-
-const cards = [
-  {
-    id: 'atendimento',
-    icon: Headset,
-    tag: '01',
-    title: 'Atendimento Personalizado',
-    description: 'Profissionais treinados nos mais rigorosos padrões de cortesia e eficiência.',
-    accent: '#4DFFA0',
-    visual: (
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-        <div className="w-48 h-48 rounded-full border border-[#4DFFA0]/10 absolute" />
-        <div className="w-72 h-72 rounded-full border border-[#4DFFA0]/5 absolute" />
-        <div className="w-96 h-96 rounded-full border border-[#4DFFA0]/[0.03] absolute" />
-        <div
-          className="w-40 h-40 rounded-full absolute top-4 right-4 opacity-30"
-          style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.35) 0%, transparent 70%)' }}
-        />
-        <Headset size={72} weight="thin" className="text-white/10 relative z-10" />
-      </div>
-    ),
-    size: 'large',
-  },
-  {
-    id: 'seguranca',
-    icon: ShieldCheck,
-    tag: '02',
-    title: 'Segurança Avançada',
-    description: 'Monitoramento 24h com câmeras de IA e detecção de incidentes em tempo real.',
-    accent: '#4DFFA0',
-    visual: (
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-        <div
-          className="w-56 h-56 rounded-full absolute opacity-20"
-          style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.5) 0%, transparent 65%)' }}
-        />
-        <ShieldCheck size={80} weight="thin" className="text-white/8 relative z-10" />
-        {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute border border-[#4DFFA0]/10 rounded-full"
-            style={{ width: `${(i + 1) * 80}px`, height: `${(i + 1) * 80}px` }}
-          />
-        ))}
-      </div>
-    ),
-    size: 'small',
-  },
-  {
-    id: 'equipe',
-    icon: Users,
-    tag: '03',
-    title: 'Profissionais Qualificados',
-    description: 'Equipe apaixonada por precisão, do manobrista ao supervisor.',
-    accent: '#4DFFA0',
-    visual: (
-      <div className="absolute inset-0 overflow-hidden flex items-end justify-center pb-6">
-        <div className="flex items-end gap-2">
-          {[40, 56, 72, 56, 40].map((h, i) => (
-            <div
-              key={i}
-              className="w-3 rounded-full bg-gradient-to-t from-[#4DFFA0]/30 to-[#4DFFA0]/5"
-              style={{ height: `${h}px` }}
-            />
-          ))}
-        </div>
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ background: 'radial-gradient(ellipse at 50% 80%, rgba(77,255,160,0.4) 0%, transparent 60%)' }}
-        />
-      </div>
-    ),
-    size: 'small',
-  },
-  {
-    id: 'tech',
-    icon: Cpu,
-    tag: '04',
-    title: 'Autotech de Ponta',
-    description: 'Totens de autoatendimento, leitura de placas e controle digital de ocupação.',
-    accent: '#4DFFA0',
-    visual: (
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-        <div className="grid grid-cols-5 gap-1.5 opacity-20">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full bg-[#4DFFA0]"
-              style={{ opacity: Math.random() > 0.4 ? 1 : 0.2 }}
-            />
-          ))}
-        </div>
-        <div
-          className="absolute w-48 h-48 rounded-full opacity-15"
-          style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.6) 0%, transparent 70%)' }}
-        />
-        <Cpu size={64} weight="thin" className="text-white/10 absolute" />
-      </div>
-    ),
-    size: 'large',
-  },
-]
+import { useI18n } from './I18nProvider'
 
 const cardReveal = {
   hidden: { opacity: 0, y: 60, scale: 0.96 },
@@ -121,6 +20,110 @@ const cardReveal = {
 }
 
 export default function Servicos() {
+  const { dict } = useI18n()
+
+  const cards = [
+    {
+      id: 'atendimento',
+      icon: Headset,
+      tag: '01',
+      title: dict.servicos.atendimento,
+      description: dict.servicos.atendimentoDesc,
+      accent: '#4DFFA0',
+      visual: (
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <div className="w-48 h-48 rounded-full border border-[#4DFFA0]/10 absolute" />
+          <div className="w-72 h-72 rounded-full border border-[#4DFFA0]/5 absolute" />
+          <div className="w-96 h-96 rounded-full border border-[#4DFFA0]/[0.03] absolute" />
+          <div
+            className="w-40 h-40 rounded-full absolute top-4 right-4 opacity-30"
+            style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.35) 0%, transparent 70%)' }}
+          />
+          <Headset size={72} weight="thin" className="text-white/10 relative z-10" />
+        </div>
+      ),
+      size: 'large',
+    },
+    {
+      id: 'seguranca',
+      icon: ShieldCheck,
+      tag: '02',
+      title: dict.servicos.seguranca,
+      description: dict.servicos.segurancaDesc,
+      accent: '#4DFFA0',
+      visual: (
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <div
+            className="w-56 h-56 rounded-full absolute opacity-20"
+            style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.5) 0%, transparent 65%)' }}
+          />
+          <ShieldCheck size={80} weight="thin" className="text-white/8 relative z-10" />
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute border border-[#4DFFA0]/10 rounded-full"
+              style={{ width: `${(i + 1) * 80}px`, height: `${(i + 1) * 80}px` }}
+            />
+          ))}
+        </div>
+      ),
+      size: 'small',
+    },
+    {
+      id: 'equipe',
+      icon: Users,
+      tag: '03',
+      title: dict.servicos.equipe,
+      description: dict.servicos.equipeDesc,
+      accent: '#4DFFA0',
+      visual: (
+        <div className="absolute inset-0 overflow-hidden flex items-end justify-center pb-6">
+          <div className="flex items-end gap-2">
+            {[40, 56, 72, 56, 40].map((h, i) => (
+              <div
+                key={i}
+                className="w-3 rounded-full bg-gradient-to-t from-[#4DFFA0]/30 to-[#4DFFA0]/5"
+                style={{ height: `${h}px` }}
+              />
+            ))}
+          </div>
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{ background: 'radial-gradient(ellipse at 50% 80%, rgba(77,255,160,0.4) 0%, transparent 60%)' }}
+          />
+        </div>
+      ),
+      size: 'small',
+    },
+    {
+      id: 'tech',
+      icon: Cpu,
+      tag: '04',
+      title: dict.servicos.tech,
+      description: dict.servicos.techDesc,
+      accent: '#4DFFA0',
+      visual: (
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <div className="grid grid-cols-5 gap-1.5 opacity-20">
+            {[...Array(30)].map((_, i) => (
+              <div
+                key={i}
+                className="w-2 h-2 rounded-full bg-[#4DFFA0]"
+                style={{ opacity: Math.random() > 0.4 ? 1 : 0.2 }}
+              />
+            ))}
+          </div>
+          <div
+            className="absolute w-48 h-48 rounded-full opacity-15"
+            style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.6) 0%, transparent 70%)' }}
+          />
+          <Cpu size={64} weight="thin" className="text-white/10 absolute" />
+        </div>
+      ),
+      size: 'large',
+    },
+  ]
+
   return (
     <section id="servicos" className="py-24 lg:py-32 bg-[#1e1e1e]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -129,12 +132,12 @@ export default function Servicos() {
         <div className="mb-14">
           <RevealText delay={0}>
             <span className="text-[#4DFFA0] text-[10px] font-medium tracking-[0.35em] uppercase block mb-4">
-              A Excelência Está Nos Detalhes
+              {dict.servicos.excelencia}
             </span>
           </RevealText>
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight text-[#f0f0f0] leading-[1.08]">
-            <RevealText delay={0.1}>Por que <span className="font-bold">escolher</span></RevealText>
-            <RevealText delay={0.22}><span className="text-white/40 font-extralight">a Park Real?</span></RevealText>
+            <RevealText delay={0.1}>{dict.servicos.pqEscolher} <span className="font-bold">{dict.servicos.escolher}</span></RevealText>
+            <RevealText delay={0.22}><span className="text-white/40 font-extralight">{dict.servicos.aParkReal}</span></RevealText>
           </h2>
         </div>
 

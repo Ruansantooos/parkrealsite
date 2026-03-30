@@ -4,7 +4,10 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+import { useI18n } from './I18nProvider'
+
 export default function Hero() {
+  const { dict } = useI18n()
   const containerRef = useRef<HTMLElement>(null)
 
   const { scrollYProgress } = useScroll({
@@ -79,8 +82,8 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-[2.4rem] sm:text-[2.8rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.05] font-light text-white tracking-tight"
           >
-            <span className="font-extralight text-white/45">Novo conceito</span><br />
-            <span className="font-bold">em estacionar.</span>
+            <span className="font-extralight text-white/45">{dict.hero.novoConceito}</span><br />
+            <span className="font-bold">{dict.hero.emEstacionar}</span>
           </motion.h1>
         </div>
 
@@ -99,7 +102,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="text-white/45 text-sm lg:text-base leading-relaxed max-w-[220px] sm:max-w-xs font-light"
         >
-          Cuidamos de cada detalhe para que sua experiência seja realmente única.
+          {dict.hero.detalhe}
         </motion.p>
       </motion.div>
 

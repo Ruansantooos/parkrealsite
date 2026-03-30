@@ -2,9 +2,11 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useI18n } from './I18nProvider'
 
 export default function ScrollPhrase() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const { dict } = useI18n()
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -27,14 +29,14 @@ export default function ScrollPhrase() {
           {/* Label */}
           {/* Main phrase */}
           <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.1] text-[#f0f0f0]">
-            Não entregamos{' '}
+            {dict.scrollPhrase.naoEntregamos}
             <span className="font-bold text-white">
-              apenas uma vaga.
+              {dict.scrollPhrase.vaga}
             </span>
             <br />
-            Entregamos a{' '}
+            {dict.scrollPhrase.entregamos}
             <span className="relative inline-block font-bold">
-              perfeição
+              {dict.scrollPhrase.perfeicao}
               {/* Underline accent */}
               <svg
                 className="absolute -bottom-2 left-0 w-full"
@@ -50,8 +52,8 @@ export default function ScrollPhrase() {
                   strokeLinecap="round"
                 />
               </svg>
-            </span>{' '}
-            em movimento.
+            </span>
+            {dict.scrollPhrase.emMovimento}
           </p>
         </motion.div>
 

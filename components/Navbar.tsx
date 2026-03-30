@@ -44,7 +44,11 @@ export default function Navbar() {
     setMenuOpen(false)
   }
 
-  const flags: Record<string, string> = { pt: '🇧🇷', en: '🇺🇸', es: '🇪🇸' }
+  const flags: Record<string, string> = {
+    pt: 'https://flagcdn.com/br.svg',
+    en: 'https://flagcdn.com/us.svg',
+    es: 'https://flagcdn.com/es.svg'
+  }
 
   const LanguageSwitcher = ({ mobile = false }: { mobile?: boolean }) => {
     return (
@@ -54,10 +58,10 @@ export default function Navbar() {
             key={l}
             onClick={() => switchLocale(l)}
             title={l === 'pt' ? 'Português' : l === 'en' ? 'English' : 'Español'}
-            className={`text-lg leading-none transition-all duration-200 rounded-full p-1
-              ${locale === l ? 'opacity-100 scale-110 ring-1 ring-[#4DFFA0]' : 'opacity-40 hover:opacity-80'}`}
+            className={`transition-all duration-200 rounded-full w-6 h-6 flex items-center justify-center overflow-hidden
+              ${locale === l ? 'opacity-100 scale-110 ring-2 ring-offset-1 ring-offset-[#1e1e1e] ring-[#4DFFA0]' : 'opacity-40 hover:opacity-80 grayscale hover:grayscale-0'}`}
           >
-            {flags[l]}
+            <img src={flags[l]} alt={l} className="w-full h-full object-cover" />
           </button>
         ))}
       </div>

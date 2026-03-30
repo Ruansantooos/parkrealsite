@@ -1,12 +1,16 @@
-const navLinks = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Mensalista', href: '#mensalista' },
-  { label: 'Localização', href: '#localizacao' },
-  { label: 'Contato', href: '#contato' },
-]
+import { useI18n } from './I18nProvider'
 
 export default function Footer() {
+  const { dict } = useI18n()
+
+  const navLinks = [
+    { label: dict.navbar.inicio, href: '#inicio' },
+    { label: dict.navbar.servicos, href: '#servicos' },
+    { label: dict.navbar.mensalista, href: '#mensalista' },
+    { label: dict.navbar.localizacao, href: '#localizacao' },
+    { label: dict.navbar.contato, href: '#contato' },
+  ]
+
   return (
     <footer className="bg-[#161616] border-t border-[#2e2e2e]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
@@ -21,12 +25,12 @@ export default function Footer() {
               />
             </div>
             <p className="text-[#71717a] text-sm leading-relaxed">
-              Qualidade, segurança e atendimento de excelência.
+              {dict.footer.slogan}
             </p>
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap gap-x-8 gap-y-3">
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 justify-center lg:justify-start">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -75,7 +79,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-[#2e2e2e] text-center">
           <p className="text-[#71717a] text-xs">
-            &copy; 2025 Park Real Estacionamentos. Todos os direitos reservados.
+            &copy; 2025 Park Real Estacionamentos. {dict.footer.todosDireitos}
           </p>
         </div>
       </div>

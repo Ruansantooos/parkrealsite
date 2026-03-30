@@ -3,23 +3,26 @@
 import { motion } from 'framer-motion'
 import { Clock, Phone } from '@phosphor-icons/react'
 import RevealText from '@/components/RevealText'
-
-const infoCards = [
-  {
-    icon: Clock,
-    label: 'Horários',
-    value: 'Segunda a Sexta: 07h às 22h\nSábado e Domingo: 08h às 20h',
-    href: null,
-  },
-  {
-    icon: Phone,
-    label: 'Telefone',
-    value: '(11) 98181-7779',
-    href: 'tel:+5511981817779',
-  },
-]
+import { useI18n } from './I18nProvider'
 
 export default function Localizacao() {
+  const { dict } = useI18n()
+
+  const infoCards = [
+    {
+      icon: Clock,
+      label: dict.localizacao.horariosLabel,
+      value: dict.localizacao.horariosValue,
+      href: null,
+    },
+    {
+      icon: Phone,
+      label: dict.localizacao.telefoneLabel,
+      value: '(11) 98181-7779',
+      href: 'tel:+5511981817779',
+    },
+  ]
+
   return (
     <section id="localizacao" className="py-24 lg:py-32 bg-[#232323]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -27,13 +30,13 @@ export default function Localizacao() {
         <div className="mb-14">
           <RevealText delay={0}>
             <span className="text-[#4DFFA0] text-[10px] font-medium tracking-[0.35em] uppercase block mb-4">
-              Localização
+              {dict.localizacao.localizacaoTitle}
             </span>
           </RevealText>
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight leading-[1.08] text-[#f0f0f0]">
-            <RevealText delay={0.1}>Onde nos <span className="font-bold">encontrar</span></RevealText>
+            <RevealText delay={0.1}>{dict.localizacao.ondeEncontrar} <span className="font-bold">{dict.localizacao.encontrar}</span></RevealText>
             <RevealText delay={0.22}>
-              <span className="text-white/40 font-extralight">Park Real.</span>
+              <span className="text-white/40 font-extralight">{dict.localizacao.parkReal}</span>
             </RevealText>
           </h2>
         </div>
@@ -97,7 +100,7 @@ export default function Localizacao() {
               </div>
               <div className="flex-1">
                 <span className="text-xs text-[#71717a] uppercase tracking-wider font-medium block mb-1">
-                  WhatsApp
+                  {dict.localizacao.whatsAppLabel}
                 </span>
                 <a
                   href="https://wa.me/5511981817779"
@@ -106,7 +109,7 @@ export default function Localizacao() {
                   className="text-[#f0f0f0] text-sm font-semibold hover:text-[#4DFFA0] transition-colors"
                   style={{ WebkitTextStroke: '0.3px rgba(0,0,0,0.1)' }}
                 >
-                  Enviar mensagem
+                  {dict.localizacao.whatsAppBtn}
                 </a>
               </div>
             </motion.div>
