@@ -44,17 +44,20 @@ export default function Navbar() {
     setMenuOpen(false)
   }
 
+  const flags: Record<string, string> = { pt: '🇧🇷', en: '🇺🇸', es: '🇪🇸' }
+
   const LanguageSwitcher = ({ mobile = false }: { mobile?: boolean }) => {
     return (
-      <div className={`flex items-center gap-3 ${mobile ? 'justify-center py-4 border-t border-white/5' : 'ml-4'}`}>
-        {['pt', 'en', 'es'].map((l) => (
+      <div className={`flex items-center gap-2 ${mobile ? 'justify-center py-4 border-t border-white/5' : 'ml-2'}`}>
+        {(['pt', 'en', 'es'] as const).map((l) => (
           <button
             key={l}
             onClick={() => switchLocale(l)}
-            className={`text-xs font-semibold uppercase tracking-wider transition-all duration-200 
-              ${locale === l ? 'text-[#4DFFA0]' : 'text-[#71717a] hover:text-[#f0f0f0]'}`}
+            title={l === 'pt' ? 'Português' : l === 'en' ? 'English' : 'Español'}
+            className={`text-lg leading-none transition-all duration-200 rounded-full p-1
+              ${locale === l ? 'opacity-100 scale-110 ring-1 ring-[#4DFFA0]' : 'opacity-40 hover:opacity-80'}`}
           >
-            {l}
+            {flags[l]}
           </button>
         ))}
       </div>
