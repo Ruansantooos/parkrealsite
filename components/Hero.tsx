@@ -129,7 +129,7 @@ export default function Hero() {
         <img
           src="/logo/logo-correto.svg?v=1"
           alt="Park Real Logo"
-          className="h-10 xl:h-12 w-auto opacity-80"
+          className="h-14 xl:h-16 w-auto opacity-80"
         />
       </motion.div>
 
