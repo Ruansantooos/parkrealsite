@@ -103,5 +103,18 @@
     "entregamos": "We deliver ",
     "perfeicao": "perfection",
     "emMovimento": " in motion."
+  },
+  "segurancaMulher": {
+    "exclusivo": "Women's Space",
+    "titulo1": "Care and",
+    "titulo2": "Security",
+    "titulo3": "for you.",
+    "desc": "We created an environment where every detail was designed for your safety and comfort. Feel protected from arrival to departure.",
+    "iluminacao": "Strategic Lighting",
+    "iluminacaoDesc": "Preferred parking spots with enhanced lighting, close to main access points and elevators.",
+    "seguro": "Full Protection",
+    "seguroDesc": "Complete insurance ensuring total protection for all belongings inside your vehicle.",
+    "monitoramento": "Dedicated Monitoring",
+    "monitoramentoDesc": "Cameras focused on exclusive areas with a team attentive to any irregular movement."
   }
 }

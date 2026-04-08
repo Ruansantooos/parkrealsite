@@ -4,6 +4,7 @@ import ScrollPhrase from '@/components/ScrollPhrase'
 import Marquee from '@/components/Marquee'
 import Servicos from '@/components/Servicos'
 import Mensalista from '@/components/Mensalista'
+import SegurancaMulher from '@/components/SegurancaMulher'
 import Localizacao from '@/components/Localizacao'
 import Contato from '@/components/Contato'
 import Footer from '@/components/Footer'
@@ -21,6 +22,7 @@ export default function Home() {
         <ScrollPhrase />
         <Marquee />
         <Servicos />
+        <SegurancaMulher />
         <Mensalista />
         <Localizacao />
         <Contato />

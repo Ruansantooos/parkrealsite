@@ -103,5 +103,18 @@
     "entregamos": "Entregamos a ",
     "perfeicao": "perfeição",
     "emMovimento": " em movimento."
+  },
+  "segurancaMulher": {
+    "exclusivo": "Espaço Mulher",
+    "titulo1": "Cuidado e",
+    "titulo2": "Segurança",
+    "titulo3": "para você.",
+    "desc": "Criamos um ambiente onde cada detalhe foi pensado para a sua segurança e conforto. Sinta-se protegida desde a chegada até a saída.",
+    "iluminacao": "Iluminação Estratégica",
+    "iluminacaoDesc": "Vagas preferenciais com iluminação reforçada e próximas aos acessos principais e elevadores.",
+    "seguro": "Proteção Integral",
+    "seguroDesc": "Seguro completo garantindo a proteção total de todos os pertences no interior do seu veículo.",
+    "monitoramento": "Monitoramento Dedicado",
+    "monitoramentoDesc": "Câmeras focadas nas áreas exclusivas com equipe atenta a qualquer movimentação irregular."
   }
 }
