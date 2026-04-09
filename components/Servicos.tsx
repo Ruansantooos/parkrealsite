@@ -113,10 +113,13 @@ export default function Servicos() {
               />
             ))}
           </div>
-          <div
-            className="absolute w-48 h-48 rounded-full opacity-15"
-            style={{ background: 'radial-gradient(circle, rgba(77,255,160,0.6) 0%, transparent 70%)' }}
-          />
+          <div className="absolute top-8 right-8 w-24 h-auto opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+            <img 
+              src="https://wpsbrasil.com/templates/yootheme/cache/logo-novoteste2-f902ec10.png" 
+              alt="WPS Brasil Logo"
+              className="w-full h-auto brightness-0 invert" 
+            />
+          </div>
           <Cpu size={64} weight="thin" className="text-white/10 absolute" />
         </div>
       ),
